@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>Timeless</title>
+ <body>
+ 
+ <h1>Time Tracker</h1>
+ 
+ <form action="/submit" method="post">
+ 		<label for="date">Week of</label>
+        <input autofocus required type="date" name ="date">
+    
+        <label for="mondayTime">Monday</label>
+        <input required type="number" name ="mondayTime">
+        
+        <label for="tuesdayTime">Tuesday</label>
+        <input type="number" name ="tuesdayTime">
+
+        <label for="wednesdayTime">Wednesday</label>
+        <input  type="number" name ="wednesdayTime">
+        
+    
+        <label for="thursdayTime">Thursday</label>
+        <input type="number" name ="thursdayTime">
+        
+    
+        <label for="fridayTime">Friday</label>
+        <input type="number" name ="fridayTime">
+        
+        <label for="total">Total</label>
+        
+        
+        <button name="button" value="update">Update</button>
+        <button name="button" value="submit">Submit</button>    
+ 
+ 
+ </form>
+ 
+ {{#hasTimeTrackings}}
+ 	<table>
+ 		<thead>
+ 			<tr>
+ 				<th>Week of</th>
+ 				<th>Monday</th>
+ 				<th>Tuesday</th>
+ 				<th>Wednesday</th>
+ 				<th>Thursday</th>
+ 				<th>Friday</th>
+ 				<th>Total</th>
+ 			</tr>
+ 		</thead>
+ 		<tbody>
+ 			{{#timeTrackings}}
+ 				<tr>
+ 					<td>{{ date }}</td>
+ 					<td>{{ mondayTime}}</td>
+ 					<td></td>
+ 					<td></td>
+ 					<td></td>
+ 					<td></td>
+ 					<td>{{ total }}</td>
+ 				</tr>
+ 			{{/timeTrackings}}	
+ 		</tbody>
+ 	</table>
+ {{/hasTimeTrackings}}
+ </body>
+  
+</html>
